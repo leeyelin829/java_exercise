@@ -1,35 +1,19 @@
-import java.util.Scanner;//2023245065 소프트웨어학부 이예린
-public class exercise3 {
+import java.util.Arrays;
+public class exercise3 {//2023245065 소프트웨어학부 이예린
     public static void main(String[] args) {
-        System.out.print("enter your num1:");
-        Scanner sc = new Scanner(System.in);//num1 입력받기
-        int num1 = sc.nextInt();
-        System.out.print("enter your num2:");//num2 입력받기
-        int num2 = sc.nextInt();
-        System.out.print("choice \n 1.+ \n 2.- \n 3.* \n 4./ \n 5.% \n");//연산 선택받기
-        int calculation = sc.nextInt();
+        double[] values = {1,9,4.5,6.6,5.7,-4.5};//배열 선언
+        System.out.println(Arrays.toString(values));//정렬된 배열 출력
 
-        switch (calculation){
-            case 1:
-                System.out.printf("%d + %d = %d",num1, num2, num1 + num2);//덧셈
-                break;
-            case 2:
-                System.out.printf("%d - %d = %d",num1, num2, num1 - num2);//뺼셈
-                break;
-            case 3:
-                System.out.printf("%d * %d = %d",num1, num2, num1 * num2);//곱셈
-                break;
-            case 4:
-                System.out.printf("%d / %d = %d",num1, num2, num1 / num2);//나눗셈
-                break;
-            case 5:
-                System.out.printf("%d %% %d = %d",num1, num2, num1 % num2);//나머지
-                break;
-            default:
-                System.out.print("Wrong Input");//잘못된 입력
-                break;
-
+        for(int i = 0; i < values.length - 1; i++){//버블 sort 사용
+            for(int j = 0; j< values.length - 1 - i; j++){
+                if(values[j] > values[j + 1]){
+                    double temp = values[j + 1];
+                    values[j + 1] = values[j];
+                    values[j] = temp;
+                }
+            }
         }
-
+        System.out.println("...");
+        System.out.println(Arrays.toString(values));//정렬된 배열 출력
     }
 }

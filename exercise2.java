@@ -1,32 +1,15 @@
-import java.util.Scanner;//2023245065 소프트웨어학부 이예린
-public class exercise2 {
+public class exercise2 {//2023245065 소프트웨어학부 이예린
     public static void main(String[] args) {
-        System.out.print("enter your num1:");
-        Scanner sc = new Scanner(System.in);//num1 입력받기
-        int num1 = sc.nextInt();
-        System.out.print("enter your num2:");//num2 입력받기
-        int num2 = sc.nextInt();
-        System.out.print("choice \n 1.+ \n 2.- \n 3.* \n 4./ \n 5.% \n");//연산 선택받기
-        int calculation = sc.nextInt();
+        int[] values = {1,2};//1과 2를 요소로 가지는 배열 선언
+        System.out.printf("values[0] = %d,values[1] = %d\n",values[0],values[1]);//원래 배열 출력
+        int[] temp = new int[1];//빈 공간 생성
 
-        if (calculation == 1){
-            System.out.printf("%d + %d = %d",num1, num2, num1 + num2);//덧셈
-        }
-        else if (calculation == 2){
-            System.out.printf("%d - %d = %d",num1, num2, num1 - num2);//뺼셈
-        }
-        else if (calculation == 3){
-            System.out.printf("%d * %d = %d",num1, num2, num1 * num2);//곱셈
-        }
-        else if (calculation == 4){
-            System.out.printf("%d / %d = %d",num1, num2, num1 / num2);//나누기
-        }
-        else if (calculation == 5){
-            System.out.printf("%d %% %d = %d",num1, num2, num1 % num2);//나머지
-        }
-        else {
-            System.out.print("Wrong Input");//잘못된 선택
-        }
+        temp[0] = values[1];//빈 공간에 임시로 값 저장
+        //값 교환
+        values[1] = values[0];
+        values[0] = temp[0];
 
+        System.out.println("...");
+        System.out.printf("values[0] = %d,values[1] = %d",values[0],values[1]);//값을 서로 교환한 배열 출력
     }
 }
